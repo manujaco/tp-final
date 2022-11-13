@@ -1,0 +1,34 @@
+{
+  "libros": [
+    {
+      "titulo": "Harry Potter",
+      "autor": "J.K. Rollings",
+      "id": 1
+    },
+    {
+      "titulo": "Los Miserables",
+      "autor": "Viktor Hugo",
+      "id": 2
+    },
+    {
+      "titulo": "Los Miserables 2",
+      "autor": "Viktor Hugo",
+      "id": 3
+    }
+  ],
+  "alumnos": [
+    {
+      "dni": "40697643",
+      "nombre": "Camila Alvarez",
+      "direccion": "La Plata 1003",
+      "id": 1
+    },
+    {
+      "dni": "35223344",
+      "nombre": "juan",
+      "direccion": "mate de luna 2000",
+      "id": 3
+    }
+  ],
+  "prestamo": []
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MI APP</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="app.js" defer></script>
+</head>
+<body>
+
+  <div class="prestamo">
+    <input type="text" id="fechaent" placeholder="Fecha de entrega">
+    <input type="text" id="fechadev" placeholder="Fecha de devolucion">
+    <input type="text" id="libroId" placeholder="Libro">
+    <input type="text" id="alumnoId" placeholder="Alumno">
+    <button id="agreprest" onclick="guardarRegistro()">Guardar</button>
+    <button id="actprest" onclick="actualizarRegistro()">Actualizar</button>
+    <hr>
+  </div>
+
+  <br><br>
+
+    <div class="libros">
+    <input type="text" id="tit" placeholder="Titulo">
+    <input type="text" id="autor" placeholder="Autor">
+    <button id="agr" onclick="guardarLibros()">Agregar libro</button>
+    <button id="act" onclick="actualizarLibros()" hidden>Actualizar</button>
+    <div id="lis"></div>
+    <hr>
+    </div>
+<br><br>
+
+    <div class="alumnos">
+      <input type="text" id="dni" placeholder="D.N.I">
+      <input type="text" id="nom" placeholder="Nombre">
+      <input type="text" id="direc" placeholder="Dirreccion">
+      <button id="agrAlumno" onclick="guardarAlumno()">Agregar alumno</button>
+      <button id="actAlumno" onclick="actualizarAlumno()" hidden>Actualizar</button>
+      <div id="lisAlumno"></div>
+      <hr>
+    </div>
+
+
+</body>
+</html>
