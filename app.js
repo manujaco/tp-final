@@ -22,10 +22,19 @@ async function guardarLibros() {
     //      .then(function (resp) {
     //           alert("grabacion ok")
     //      })
-    resp = await axios.post("http://localhost:3000/libros", { titulo: titulo.value, autor: autor.value})
+    try {
+        resp = await axios.post("http://localhost:3000/libros", { titulo: titulo.value, autor: autor.value})
+        alert("carga exitosa")
+    } catch (error) {
+        console.error(error)
+    }
 }
 
 async function listarLibros() {
+
+    try {
+        
+    
     resp = await axios.get("http://localhost:3000/libros")
     listado.innerHTML = ""
     resp.data.forEach(element => {
@@ -35,6 +44,10 @@ async function listarLibros() {
           element.titulo + " | " + element.autor +
           "<br>";
     });
+    
+} catch (error) {
+    alert("error al cargar ")    
+}
 }
 
 
@@ -43,6 +56,7 @@ async function borrarLibros(id) {
  //   if (!LibroEstaPrestado(id)) {  //ejemplo de como seria mas o menos la validacion de borrado
         try {
             await axios.delete("http://localhost:3000/libros/" +id)
+            alert ("borrado exitoso")
         } catch (error) {
             alert("error al borrar")
         }
@@ -57,15 +71,25 @@ async function mostrarLibros(id) {
     btnact.hidden = false
     btnagr.hidden = true
     auxiliar = id
-    resp = await axios.get("http://localhost:3000/libros/" +  id)
-    titulo.value = resp.data.titulo
-    autor.value = resp.data.autor
+    try {
+        resp = await axios.get("http://localhost:3000/libros/" +  id)
+        titulo.value = resp.data.titulo
+        autor.value = resp.data.autor
+        
+    } catch (error) {
+        console.error("error al mostrar libros ")
+    }
 }
 
 async function actualizarLibros() {
     btnact.hidden = true;
     btnagr.hidden = false;
-    resp = await axios.put("http://localhost:3000/libros/" + auxiliar, { titulo: titulo.value, autor: autor.value})
+    try {
+        resp = await axios.put("http://localhost:3000/libros/" + auxiliar, { titulo: titulo.value, autor: autor.value})
+        console.log("actualizado exitoso")
+    } catch (error) {
+        console.error(error)
+    }
 }
 //------------------Alumnos-------------------------------
 
